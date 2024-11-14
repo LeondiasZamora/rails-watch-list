@@ -1,0 +1,12 @@
+<h1>Lists#index</h1>
+<p>Find me in app/views/lists/index.html.erb</p>
+<ul>
+<% @lists.each do |list|%>
+ <li>
+ <%= link_to list.name, list_path(list)%>
+ <button><%=link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ??"}%></button>
+ </li>
+<% end %>
+</ul>
+
+<%= link_to "create a new list", new_list_path%>
