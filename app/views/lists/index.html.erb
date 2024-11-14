@@ -1,12 +1,17 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-<ul>
-<% @lists.each do |list|%>
- <li>
- <%= link_to list.name, list_path(list)%>
- <button><%=link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ??"}%></button>
- </li>
-<% end %>
-</ul>
+<div class="card-category-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876028.jpg?semt=ais_hybrid)">
+  your movie lists
+</div>
+<h2>lists</h2>
 
-<%= link_to "create a new list", new_list_path%>
+<div class="cards">
+<% @lists.each do |list|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+<% end %>
+</div>
+
+
+<button class ="btn btn-primary text-center">
+<%= link_to "create a new list", new_list_path, class: "text-white"%>
+</button>
