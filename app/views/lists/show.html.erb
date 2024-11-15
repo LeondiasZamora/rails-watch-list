@@ -10,4 +10,4 @@
 <% end %>
 <%= link_to "back to home", lists_path%>
 <%= link_to "create a new bookmark", new_list_bookmark_path(@list)%>
-<button><%=link_to "Delete the #{@list.name} list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ??"}%></button>
+<%= link_to "Delete the #{@list.name} list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
